@@ -12,6 +12,9 @@
     "blur",
     "stack"
   ],
+  "scripts": {
+    "minify": "uglifyjs --compress --mangle -- codebit-modal.js > codebit-modal.min.js && uglifycss codebit-modal.css > codebit-modal.min.css"
+  },
   "license": "MIT",
   "repository": "ksfreitas/codebit-modal",
   "devDependencies": {
