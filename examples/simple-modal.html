@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Modal Example</title>
+</head>
+<body>
+<p>This is a simple example.</p>
+
+<button id="showModal">Click to show modal</button>
+
+<link href="../codebit-modal.css" rel="stylesheet">
+<script src="../codebit-modal.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var button = document.getElementById('showModal');
+    button.addEventListener('click', function () {
+        var modal = new CbModal();
+        modal.modalHead.innerHTML = 'Information';
+        modal.modalBody.innerHTML = '<p>Hello world!</p>';
+
+        var showAnotherModal = document.createElement('button');
+        showAnotherModal.innerText = 'Show other modal';
+        showAnotherModal.addEventListener('click', function () {
+            var secondModal = new CbModal();
+            secondModal.modalHead.innerHTML = 'Another modal';
+            secondModal.modalBody.innerHTML = '<p>Click ESC to close.</p>';
+            secondModal.show(modal);
+        });
+        modal.modalBody.appendChild(showAnotherModal);
+
+        var closeButtom = document.createElement('button');
+        closeButtom.innerText = 'Close';
+        closeButtom.addEventListener('click', function () {
+            modal.hide();
+        });
+        modal.modalBody.appendChild(closeButtom);
+
+        modal.show();
+    });
+</script>
+</body>
+</html>
