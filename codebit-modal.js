@@ -98,6 +98,8 @@ function CbModal(element) {
         }
         this.backdrop.style.zIndex = zIndex || '5';
 
+        document.body.classList.add('has-modal-showing');
+
         // insert element on root
         if (this.backdrop.parentElement !== document.body) {
             this.removeFromParent();
@@ -131,6 +133,9 @@ function CbModal(element) {
             if (cbModal.disattachWhenHidden) cbModal.removeFromParent();
             if (cbModal.onHidden != null) cbModal.onHidden();
             showingCbModals.splice(showingCbModals.indexOf(self));
+            if (showingCbModals.length == 0) {
+                document.body.classList.remove('has-modal-showing')
+            }
         }, this.animationTime);
     };
 }

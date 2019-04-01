@@ -1,3 +1,8 @@
+.has-modal-showing {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
 .cb-modal-backdrop {
     position: fixed;
     top: 0;

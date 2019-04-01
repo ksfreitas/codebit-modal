@@ -1,12 +1,10 @@
 {
   "name": "codebit-modal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Cássio de Freitas e Silva <ksfreitas@gmail.com>",
   "description": "Simple modal with background blur effect",
-  "dependencies": {
-  },
-  "engines": {
-  },
+  "dependencies": {},
+  "engines": {},
   "keywords": [
     "modal",
     "blur",
@@ -18,5 +16,7 @@
   "license": "MIT",
   "repository": "ksfreitas/codebit-modal",
   "devDependencies": {
+    "uglify-js": "^3.5.3",
+    "uglifycss": "0.0.29"
   }
 }
